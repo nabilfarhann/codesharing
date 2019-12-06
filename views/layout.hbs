@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{title}}</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
+  <link rel="stylesheet" href="/stylesheets/material-darker.css">
+
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/85a5a9ec38.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <header id="codesharing">
+    <img class="logo" src="images/codeSharing.svg" alt="codeSharing-Logo">
+    <nav>
+      <ul class="nav__links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        {{#if user}}
+        <div class="dropdown show" style="margin-top: 5px;">
+          <a style="border-radius: 30px; padding: 5px 15px;" class="btn btn-danger dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{user.name}}
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" style="color: black;" href="/logout">Logout</a>
+          </div>
+        </div>
+        {{else}}
+        <li><a href="/login">Login</a></li>
+        {{/if}}
+      </ul>
+    </nav>
+    <a class="cta" href="https://www.github.com/nabilfarhann">Github</a>
+    <p onclick="openNav()" class="menu cta">Menu</p>
+  </header>
+  <div id="mobile__menu" class="overlay">
+    <a class="close" onclick="closeNav()">&times;</a>
+    <div class="overlay__content">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      {{#if user}}
+      <li><a href="#">{{user.name}}</a></li>
+      {{else}}
+      <li><a href="/login">Login</a></li>
+      {{/if}}
+    </div>
+  </div>
+
+  <div id="stars-background">
+    {{{body}}}
+  </div>
+
+
+  <script type="text/javascript" src="javascripts/mobile.js"></script>
+</body>
+
+</html>

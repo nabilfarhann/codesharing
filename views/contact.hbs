@@ -1,0 +1,53 @@
+<div class="content-body">
+    <div class="background">
+        <div class="container">
+            <div class="screen">
+                <div class="screen-header">
+                    <div class="screen-header-left">
+                        <div class="screen-header-button close"></div>
+                        <div class="screen-header-button maximize"></div>
+                        <div class="screen-header-button minimize"></div>
+                    </div>
+                    <div class="screen-header-right">
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                    </div>
+                </div>
+                <div class="screen-body">
+                    <div class="screen-body-item left">
+                        <div class="app-title">
+                            <span>CONTACT US</span>
+                        </div>
+                        <div class="app-body">
+                            {{#each errorMessages}}
+                            <span>{{this.msg}}</span>
+                            {{/each}}
+                        </div>
+                        <div class="app-contact">Admin info : nabilfarhan.dev@gmail.com</div>
+                    </div>
+                    <div class="screen-body-item">
+                        <form method="POST">
+                            <div class="app-form">
+                                <div class="app-form-group">
+                                    <input class="app-form-control" placeholder="NAME" name="name" value={{name}}>
+                                </div>
+                                <div class="app-form-group">
+                                    <input type="email" class="app-form-control" placeholder="EMAIL" name="email"
+                                        value={{email}}>
+                                </div>
+                                <div class="app-form-group message">
+                                    <input type="text" class="app-form-control" placeholder="MESSAGE" name="message"
+                                        value={{message}}>
+                                </div>
+                                <div class="app-form-group buttons">
+                                    <button class="app-form-button" type="submit">SEND</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
